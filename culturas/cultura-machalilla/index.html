@@ -56,6 +56,7 @@
     src="../../galery3d/CulturaMachalilla/modelGLB/cantaroMachalilla.glb"
     shadow-intensity="1"
     ar
+    auto-rotate
     camera-controls
     touch-action="pan-y"
     alt="A 3D model carousel"
@@ -89,7 +90,7 @@
       <img src="../../img/hand.png" />
     </div>
   
-    <button id="ar-failure">AR is not tracking!</button>
+    <button id="ar-failure" class="btn btn-danger border-0"> Superficie no válida!</button>
   
     <div class="slider">
       <div class="slides">
@@ -298,9 +299,9 @@
       }
     }
   
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: 540px) {
       model-viewer {
-        height: 90vh;
+        height:  40rem;
       }
   
       .descripcion {

@@ -52,6 +52,7 @@
     src="../../galery3d/CulturaGuangala/modelGLB/figurinSilbato.glb"
     shadow-intensity="1"
     ar
+    auto-rotate
     camera-controls
     touch-action="pan-y"
     alt="A 3D model carousel"
@@ -93,7 +94,7 @@
   
     <!-- FIN DE HOSTPOT -->
   
-    <button slot="ar-button" id="ar-button">Ver en tu espacio</button>
+    <button id="ar-failure" class="btn btn-danger border-0"> Superficie no válida!</button>
   
     <div id="ar-prompt">
       <img src="../../img/hand.png" />
@@ -327,9 +328,9 @@
       }
     }
   
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: 540px) {
       model-viewer {
-        height: 90vh;
+        height:  40rem;
       }
   
       .descripcion {
