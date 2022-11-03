@@ -60,6 +60,7 @@
     auto-rotate
     touch-action="pan-y"
     alt="A 3D model carousel"
+    id="modelver"
   
   >
 
@@ -308,6 +309,11 @@
       display: none;
     }
   
+
+    model-viewer[ar-status="session-started"] > #modelver {
+      display: none !important;
+    }
+
     model-viewer[ar-status="session-started"] > #ar-prompt {
       display: block;
     }
