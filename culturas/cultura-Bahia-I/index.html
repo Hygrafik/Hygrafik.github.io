@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-sm-8 col-md-7 py-4">
                     <h4 class="text-white">Nuestro Museo</h4>
-                    <p class="text-white-50"> Comunidad de gente cálida y amable, donde encontraras una hermosa biodiversidad, Cabañas Familiares, Museo Arqueologico e Historico, riqueza natural y una Gastronomia Deliciosa</p>
+                    <p class="text-white-50"> Expone 245 piezas declaradas patrimoniales culturales, con relatos de 4.500 años de las culturas Valdivia, Machalilla, chorrera-Engoroy, Bahía, Guangala y Manteña</p>
                 </div>
                 <div class="col-sm-4 offset-md-1 py-4">
                     <h4 class="text-white">Contacto</h4>
@@ -61,107 +61,43 @@
     alt="A 3D model carousel"
   >
     <!-- INICIO DE HOSTPOT -->
-    <div
-      id="uno"
-      class="Hotspot descripcion"
-      slot="hotspot-1"
-      data-position="3.7379205257698986m 15.249794864740467m 13.16457672120509m"
-      data-normal="0.994060890388478m -0.09662952015922674m 0.05005678808976976m"
-      data-visibility-attribute="visible"
-    >
-      <h5 class="text-warning text-uppercase HotspotAnnotation">
-        Figurin Silbato
-      </h5>
-      <p class="HotspotAnnotation">
-        Figura hueca de un hombre parado adornado con tocado, orejeras, narigueras, collar, y pulsera. Presencia de engobe rojo y amarillo, y pintura negra en la vestimenta. Entre las manos y los pies sostiene un bastón.
-      </p>
-    </div>
-  
-    <div
-      id="dos"
-      class="Hotspot descripcion"
-      slot="hotspot-2"
-      data-position="-1.6530996755086833m 5.44811949612533m -6.783426056611496m"
-      data-normal="-0.8905523450746221m 0.38307257498697683m 0.24529965954916905m"
-      data-visibility-attribute="visible"
-    >
-      <h5 class="text-warning text-uppercase HotspotAnnotation">
-        cuenco polipodo
-      </h5>
-      <p class="HotspotAnnotation">
-        Cuenco profundo con bordes directos irregulares y base convexas; patas bifurcadas gruesas. 5 patas bifurcadas gruesas.
-      </p>
-    </div>
-  
-    <div
-      id="tres"
-      class="Hotspot descripcion"
-      slot="hotspot-3"
-      data-position="-81.07165517830398m -2.2194415445035105m 40.42086843588682m"
-      data-normal="0.07598872936567896m 0.172110159482634m 0.9821424570866754m"
-      data-visibility-attribute="visible"
-    >
-      <h5 class="text-warning text-uppercase HotspotAnnotation">
-        Figurin Silbato
-      </h5>
-      <p class="HotspotAnnotation">
-        Figura hueca de una mujer parada con dos huecos en la parte de adelante y
-        3 en la parte de atrás
-      </p>
-    </div>
-  
-    <div
-      id="cuatro"
-      class="Hotspot descripcion"
-      slot="hotspot-4"
-      data-position="0.4775199344342923m 1.327869495227454m -0.17316389095842355m"
-      data-normal="0.9491904090956254m 0.24942997190904637m -0.19189126190197342m"
-      data-visibility-attribute="visible"
-    >
-      <h5 class="text-warning text-uppercase HotspotAnnotation">
-        Cuenco Calabaza
-      </h5>
-      <p class="HotspotAnnotation">
-        Vasija no restringida de bordes directos, superficie pulida con baño de pintura roja interior y rojo sobre ante exterior. Imitación de una calabaza 
-      </p>
-    </div>
-  
+   
     <!-- FIN DE HOSTPOT -->
   
     <button slot="ar-button" id="ar-button">Ver en tu espacio</button>
   
     <div id="ar-prompt">
-      <img src="img/hand.png" />
+      <img src="../../img/hand.png" />
     </div>
   
-    <button id="ar-failure">AR is not tracking!</button>
+    <button id="ar-failure" class="bg-info"> superficie no valida!</button>
   
     <div class="slider">
       <div class="slides">
         <button
           class="slide selected"
-          onclick="switchSrc(this, 'figurinHombre'); uno()"
+          onclick="switchSrc(this, 'figurinHombre'); "
           style="
             background-image: url('../../galery3d/CulturaBahia/modelIMG/figurinHombre.png');
           "
         ></button
         ><button
-          class="slide"
-          onclick="switchSrc(this, 'cuencopolipodo'); dos()"
+          class="slide bg"
+          onclick="switchSrc(this, 'cuencopolipodo'); "
           style="
             background-image: url('../../galery3d/CulturaBahia/modelIMG/cuencopolipodo.png');
           "
         ></button
         ><button
           class="slide"
-          onclick="switchSrc(this, 'figurinMujer');tres()"
+          onclick="switchSrc(this, 'figurinMujer');"
           style="
             background-image: url('../../galery3d/CulturaBahia/modelIMG/figurinMujer.png');
           "
         ></button
         ><button
           class="slide"
-          onclick="switchSrc(this, 'cuencoCalabaza'); cuatro()"
+          onclick="switchSrc(this, 'cuencoCalabaza'); "
           style="
             background-image: url('../../galery3d/CulturaBahia/modelIMG/cuencoCalabaza.png');
           "
@@ -191,35 +127,7 @@
       ev.preventDefault();
     });
   
-    function uno() {
-      document.getElementById("dos").classList.add("ocultarHots");
-      document.getElementById("tres").classList.add("ocultarHots");
-      document.getElementById("cuatro").classList.add("ocultarHots");
-      document.getElementById("uno").classList.remove("ocultarHots");
-    }
-  
-    function dos() {
-      document.getElementById("uno").classList.add("ocultarHots");
-      document.getElementById("tres").classList.add("ocultarHots");
-      document.getElementById("cuatro").classList.add("ocultarHots");
-      document.getElementById("dos").classList.remove("ocultarHots");
-    }
-  
-    function tres() {
-      document.getElementById("uno").classList.add("ocultarHots");
-      document.getElementById("dos").classList.add("ocultarHots");
-      document.getElementById("cuatro").classList.add("ocultarHots");
-      document.getElementById("tres").classList.remove("ocultarHots");
-    }
-  
-    function cuatro() {
-      document.getElementById("uno").classList.add("ocultarHots");
-      document.getElementById("dos").classList.add("ocultarHots");
-      document.getElementById("tres").classList.add("ocultarHots");
-      document.getElementById("cuatro").classList.remove("ocultarHots");
-    }
-  
-    window.onload = uno();
+
   </script>
   
   <!-- INICIO DE STYLE MODEL VIEW-->
@@ -393,7 +301,7 @@
   
     @media only screen and (max-width: 500px) {
       model-viewer {
-        height: 90vh;
+        height:  40rem;
       }
   
       .descripcion {
