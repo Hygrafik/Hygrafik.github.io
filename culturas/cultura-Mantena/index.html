@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cultura | Manteña</title>
+  <link href="../../resources/css/pagemain.css" rel="stylesheet">
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="shortcut icon" href="../../img/logo.png">
+</head>
+
+<body>
+  <header>
+    <div class="collapse bg-nav" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <h4 class="text-white">Nuestro Museo</h4>
+                    <p class="text-white-50"> Comunidad de gente cálida y amable, donde encontraras una hermosa biodiversidad, Cabañas Familiares, Museo Arqueologico e Historico, riqueza natural y una Gastronomia Deliciosa</p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                    <h4 class="text-white">Contacto</h4>
+                    <ul class="list-unstyled">
+                      <li><a href="../../" class="text-warning">Inicio</a></li>
+                        <li><a href="https://www.google.com/maps/dir/-1.5906262,-80.842832/Museo+Arqueologico+De+Salango+los+balceros+del+sur+y+calle4+Salango+130315/@-1.5906798,-80.8429607,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x902e9dc58b47614b:0x309300df1e1c20c0!2m2!1d-80.842831!2d-1.5906111" class="text-warning">Ubicación</a></li>
+                        <li><a href="https://comunidadsalango.com/" class="text-warning">Sitio Web</a></li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-nav  ">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center">
+                <strong class="text-uppercase text-warning text-wrap ">Cultura Manteña</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+
+    <!-- CULTURA BAHIA I-II -->
+  
+  <model-viewer
+    src="../../galery3d/CulturaMantena/modelGLB/pesoRed.glb"
+    shadow-intensity="1"
+    ar
+    camera-controls
+    touch-action="pan-y"
+    alt="A 3D model carousel"
+  >
+    <!-- INICIO DE HOSTPOT -->
+    <div
+      id="uno"
+      class="Hotspot descripcion"
+      slot="hotspot-1"
+      data-position="-46.413441677061826m -53.60774825238242m -4.604840882563941m"
+      data-normal="-0.10503001543082763m 0.49414211551568926m 0.863013479345647m"
+      data-visibility-attribute="visible"
+    >
+      <h5 class="text-warning text-uppercase HotspotAnnotation">
+        Peso de Red
+      </h5>
+      <p class="HotspotAnnotation">
+        lechuza tallada en piedra arenisca con dos agujeros en la parte superior y probablemente utiliza como un peso de red.
+      </p>
+    </div>
+  
+    <div
+      id="dos"
+      class="Hotspot descripcion"
+      slot="hotspot-2"
+      data-position="-0.25848777322293465m 0.24078893310549895m -0.9872440540034089m"
+      data-normal="-0.46137732423901123m 0.729393988146034m 0.5050894720091419m"
+      data-visibility-attribute="visible"
+    >
+      <h5 class="text-warning text-uppercase HotspotAnnotation">
+        vasija Globular
+      </h5>
+      <p class="HotspotAnnotation">
+        Vasija globular de cuello evertido, alisada en el interior y exterior, base cóncava. La vasija fue utilizada para enterramientos.
+      </p>
+    </div>
+  
+    <div
+      id="tres"
+      class="Hotspot descripcion"
+      slot="hotspot-3"
+      data-position="-0.48009169964266063m 1.45731171999877m -2.081673035538925m"
+       data-normal="0.8971818484550728m 0.355621247184911m 0.2619126941432724m"
+      data-visibility-attribute="visible"
+    >
+      <h5 class="text-warning text-uppercase HotspotAnnotation">
+        vasija Globular
+      </h5>
+      <p class="HotspotAnnotation">
+        Vasija globular con cuello evertido, exterior corrugado, interior alisado y con señales de hollín. La base es cóncava. La olla estuvo probablemente enterrada de manera de los hornos tradicionales de hoy en día
+      </p>
+    </div>
+
+  
+    <!-- FIN DE HOSTPOT -->
+  
+    <button slot="ar-button" id="ar-button">Ver en tu espacio</button>
+  
+    <div id="ar-prompt">
+      <img src="img/hand.png" />
+    </div>
+  
+    <button id="ar-failure">AR is not tracking!</button>
+  
+    <div class="slider">
+      <div class="slides">
+        <button
+          class="slide selected"
+          onclick="switchSrc(this, 'pesoRed'); uno()"
+          style="
+            background-image: url('../../galery3d/CulturaMantena/modelIMG/pesoRed.png');
+          "
+        ></button
+        ><button
+          class="slide"
+          onclick="switchSrc(this, 'vasijaGlobular'); dos()"
+          style="
+            background-image: url('../../galery3d/CulturaMantena/modelIMG/vasijaGlobular.png');
+          "
+        ></button
+        ><button
+          class="slide"
+          onclick="switchSrc(this, 'vasijaGlobular2');tres()"
+          style="
+            background-image: url('../../galery3d/CulturaMantena/modelIMG/vasijaGlobular2.png');
+          "
+        ></button
+        >
+      </div>
+    </div>
+  
+  </model-viewer>
+  
+  <script>
+    const modelViewer = document.querySelector("model-viewer");
+  
+    window.switchSrc = (element, name) => {
+      const base = "../../galery3d/CulturaMantena/modelGLB/" + name;
+      modelViewer.src = base + ".glb";
+      // modelViewer.poster = base + ".webp";
+      const slides = document.querySelectorAll(".slide");
+      slides.forEach((element) => {
+        element.classList.remove("selected");
+      });
+      element.classList.add("selected");
+    };
+  
+    document.querySelector(".slider").addEventListener("beforexrselect", (ev) => {
+      // Keep slider interactions from affecting the XR scene.
+  
+      ev.preventDefault();
+    });
+  
+    function uno() {
+      document.getElementById("dos").classList.add("ocultarHots");
+      document.getElementById("tres").classList.add("ocultarHots");
+      document.getElementById("uno").classList.remove("ocultarHots");
+    }
+  
+    function dos() {
+      document.getElementById("uno").classList.add("ocultarHots");
+      document.getElementById("tres").classList.add("ocultarHots");
+      document.getElementById("dos").classList.remove("ocultarHots");
+    }
+  
+    function tres() {
+      document.getElementById("uno").classList.add("ocultarHots");
+      document.getElementById("dos").classList.add("ocultarHots");
+      document.getElementById("tres").classList.remove("ocultarHots");
+    }
+  
+   
+  
+    window.onload = uno();
+  </script>
+  
+  <!-- INICIO DE STYLE MODEL VIEW-->
+  <style>
+    /* This keeps child nodes hidden while the element loads */
+    :not(:defined) > * {
+      display: none;
+    }
+    body{
+      background-image: linear-gradient(to bottom, #46403e, #000000);
+    }
+  
+    
+  
+    model-viewer {
+      padding-top: 5px;
+      overflow-x: hidden;
+      width: 100%;
+      height: 47rem;
+      
+    }
+  
+    #ar-button {
+      background-image: url(../../img/ic_view_in_ar_new_googblue_48dp.png);
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      background-position: 12px 50%;
+      background-color: #fff;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      bottom: 132px;
+      padding: 0px 16px 0px 40px;
+      font-family: Roboto Regular, Helvetica Neue, sans-serif;
+      font-size: 14px;
+      color: #4285f4;
+      height: 36px;
+      line-height: 36px;
+      border-radius: 18px;
+      border: 1px solid #dadce0;
+    }
+  
+    #ar-button:active {
+      background-color: #e8eaed;
+    }
+  
+    #ar-button:focus {
+      outline: none;
+    }
+  
+    #ar-button:focus-visible {
+      outline: 1px solid #4285f4;
+    }
+  
+    @keyframes circle {
+      from {
+        transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg);
+      }
+      to {
+        transform: translateX(-50%) rotate(360deg) translateX(50px)
+          rotate(-360deg);
+      }
+    }
+  
+    @keyframes elongate {
+      from {
+        transform: translateX(100px);
+      }
+      to {
+        transform: translateX(-100px);
+      }
+    }
+  
+    model-viewer > #ar-prompt {
+      position: absolute;
+      left: 50%;
+      bottom: 175px;
+      animation: elongate 2s infinite ease-in-out alternate;
+      display: none;
+    }
+  
+    model-viewer[ar-status="session-started"] > #ar-prompt {
+      display: block;
+    }
+  
+    model-viewer > #ar-prompt > img {
+      animation: circle 4s linear infinite;
+    }
+  
+    model-viewer > #ar-failure {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 175px;
+      display: none;
+    }
+  
+    model-viewer[ar-tracking="not-tracking"] > #ar-failure {
+      display: block;
+    }
+  
+    .slider {
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+      position: absolute;
+      bottom: 16px;
+    }
+  
+    .slides {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+  
+    .slide {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      width: 100px;
+      height: 100px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: rgba(51, 51, 51, 0.747);
+      margin-right: 10px;
+      border-radius: 10px;
+      border: none;
+      display: flex;
+    }
+  
+    .slide.selected {
+      border: 2px solid #4285f4;
+    }
+  
+    .slide:focus {
+      outline: none;
+    }
+  
+    .slide:focus-visible {
+      outline: 1px solid #4285f4;
+    }
+    .descripcion {
+      background-color: #00000085;
+      position: absolute;
+      width: 350px;
+      height: auto;
+      color: #ffffff;
+      padding: 15px;
+      border-radius: 20px;
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    .descripcion p{
+      font-size: 0.8rem;
+    }
+  
+    @media only screen and (max-width: 720px) {
+      .descripcion {
+        width: 250px;
+        padding: 15px;
+      }
+  
+      .descripcion h5 {
+        font-size: 20px;
+      }
+    }
+  
+    @media only screen and (max-width: 500px) {
+      model-viewer {
+        height: 90vh;
+      }
+  
+      .descripcion {
+        width: 180px;
+        padding: 10px;
+        padding-bottom: 0px;
+      }
+      .descripcion h5 {
+        font-size: 10px;
+      }
+  
+      .descripcion p {
+        font-size: 11px;
+      }
+    }
+  
+    .ocultarHots {
+      display: none !important;
+    }
+  </style>
+  <!-- FIN STYLE -->
+  
+  <!-- FIN CULTURA BAHIA -->
+  
+
+
+
+<footer class="text-muted py-4 cfot footer">
+  <div class="container">
+      <p class="float-end mb-1 ">
+
+          <a href="../../" class="text-warning text-decoration-none">INICIO</a>
+      </p>
+      <p class="mb-1">POWER BY &copy; HYGRAFIK</p>
+      <p> 2022</p>
+  </div>
+</footer>
+
+  <script type="module"  src="../../resources/js/model-viewer.min.js" ></script>
+  <script src="../../resources/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
