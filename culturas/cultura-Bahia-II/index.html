@@ -153,7 +153,7 @@
   
     <button id="ar-failure" class="btn btn-danger border-0"> Superficie no válida!</button>
   
-    <div class="slider">
+    <div class="slider "  id="slidernone">
       <div class="slides">
         <button
           class="slide selected"
@@ -339,6 +339,10 @@
       display: none;
     }
   
+    model-viewer[ar-status="session-started"] > #slidernone {
+      display: none !important;
+    }
+
     model-viewer[ar-status="session-started"] > #ar-prompt {
       display: block;
     }
