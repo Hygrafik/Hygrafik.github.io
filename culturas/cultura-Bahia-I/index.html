@@ -1,449 +1,466 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cultura | Bahia</title>
+    <link href="../../resources/css/pagemain.css" rel="stylesheet" />
+    <link
+      href="../../resources/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="../../img/logo.png" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cultura | Bahia</title>
-  <link href="../../resources/css/pagemain.css" rel="stylesheet">
-  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="shortcut icon" href="../../img/logo.png">
-</head>
-
-<body>
-  <header>
-    <div class="collapse bg-nav" id="navbarHeader">
+  <body>
+    <header>
+      <div class="collapse bg-nav" id="navbarHeader">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-md-7 py-4">
-                    <h4 class="text-white">Nuestro Museo</h4>
-                    <p class="text-white-50"> Expone 245 piezas declaradas patrimoniales culturales, con relatos de 4.500 años de las culturas Valdivia, Machalilla, chorrera-Engoroy, Bahía, Guangala y Manteña</p>
-                </div>
-                <div class="col-sm-4 offset-md-1 py-4">
-                    <h4 class="text-white">Contacto</h4>
-                    <ul class="list-unstyled">
-                      <li><a href="../../" class="text-warning">Inicio</a></li>
-                        <li><a href="https://www.google.com/maps/dir/-1.5906262,-80.842832/Museo+Arqueologico+De+Salango+los+balceros+del+sur+y+calle4+Salango+130315/@-1.5906798,-80.8429607,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x902e9dc58b47614b:0x309300df1e1c20c0!2m2!1d-80.842831!2d-1.5906111" class="text-warning">Ubicación</a></li>
-                        <li><a href="https://comunidadsalango.com/" class="text-warning">Sitio Web</a></li>
-                       
-                    </ul>
-                </div>
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">Nuestro Museo</h4>
+              <p class="text-white-50">
+                Expone 245 piezas declaradas patrimoniales culturales, con
+                relatos de 4.500 años de las culturas Valdivia, Machalilla,
+                chorrera-Engoroy, Bahía, Guangala y Manteña
+              </p>
             </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contacto</h4>
+              <ul class="list-unstyled">
+                <li><a href="../../" class="text-warning">Inicio</a></li>
+                <li>
+                  <a
+                    href="https://www.google.com/maps/dir/-1.5906262,-80.842832/Museo+Arqueologico+De+Salango+los+balceros+del+sur+y+calle4+Salango+130315/@-1.5906798,-80.8429607,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x902e9dc58b47614b:0x309300df1e1c20c0!2m2!1d-80.842831!2d-1.5906111"
+                    class="text-warning"
+                    >Ubicación</a
+                  >
+                </li>
+                <li>
+                  <a href="https://comunidadsalango.com/" class="text-warning"
+                    >Sitio Web</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="navbar navbar-dark bg-nav  ">
+      </div>
+      <div class="navbar navbar-dark bg-nav">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center">
-                <strong class="text-uppercase text-warning text-wrap ">Cultura Bahia I</strong>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+          <a class="navbar-brand d-flex align-items-center">
+            <strong class="text-uppercase text-warning text-wrap"
+              >Cultura Bahia I</strong
+            >
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarHeader"
+            aria-controls="navbarHeader"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
-    </div>
-</header>
-
-
-
-
-
-
+      </div>
+    </header>
 
     <!-- CULTURA BAHIA I-II -->
-  
-  <model-viewer
-    src="../../galery3d/CulturaBahia/modelGLB/figurinHombre.glb"
-    shadow-intensity="2"
-    ar 
-    camera-controls
-    auto-rotate
-    touch-action="pan-y"
-    alt="A 3D model carousel"
-  
-  
-  >
 
- 
-
-
-    <!-- INICIO DE HOSTPOT -->
-    <div
-      id="uno"
-      class="Hotspot descripcion"
-      slot="hotspot-1"
-      data-position="3.7379205257698986m 15.249794864740467m 13.16457672120509m"
-      data-normal="0.994060890388478m -0.09662952015922674m 0.05005678808976976m"
-      data-visibility-attribute="visible"
+    <model-viewer
+      src="../../galery3d/CulturaBahia/modelGLB/figurinHombre.glb"
+      shadow-intensity="2"
+      ar
+      camera-controls
+      auto-rotate
+      touch-action="pan-y"
+      alt="A 3D model carousel"
     >
-      <h5 class="text-warning text-uppercase HotspotAnnotation">
-        Figurin Silbato
-      </h5>
-      <p class="HotspotAnnotation">
-        Figura hueca de un hombre parado adornado con tocado, orejeras, narigueras, collar, y pulsera. Presencia de engobe rojo y amarillo, y pintura negra en la vestimenta. Entre las manos y los pies sostiene un bastón.
-      </p>
-    </div>
-  
-    <div
-      id="dos"
-      class="Hotspot descripcion"
-      slot="hotspot-2"
-      data-position="-1.6530996755086833m 5.44811949612533m -6.783426056611496m"
-      data-normal="-0.8905523450746221m 0.38307257498697683m 0.24529965954916905m"
-      data-visibility-attribute="visible"
-    >
-      <h5 class="text-warning text-uppercase HotspotAnnotation">
-        cuenco polipodo
-      </h5>
-      <p class="HotspotAnnotation">
-        Cuenco profundo con bordes directos irregulares y base convexas; patas bifurcadas gruesas. 5 patas bifurcadas gruesas.
-      </p>
-    </div>
-  
-    <div
-      id="tres"
-      class="Hotspot descripcion"
-      slot="hotspot-3"
-      data-position="-81.07165517830398m -2.2194415445035105m 40.42086843588682m"
-      data-normal="0.07598872936567896m 0.172110159482634m 0.9821424570866754m"
-      data-visibility-attribute="visible"
-    >
-      <h5 class="text-warning text-uppercase HotspotAnnotation">
-        Figurin Silbato
-      </h5>
-      <p class="HotspotAnnotation">
-        Figura hueca de una mujer parada con dos huecos en la parte de adelante y
-        3 en la parte de atrás
-      </p>
-    </div>
-  
-    <div
-      id="cuatro"
-      class="Hotspot descripcion"
-      slot="hotspot-4"
-      data-position="0.4775199344342923m 1.327869495227454m -0.17316389095842355m"
-      data-normal="0.9491904090956254m 0.24942997190904637m -0.19189126190197342m"
-      data-visibility-attribute="visible"
-    >
-      <h5 class="text-warning text-uppercase HotspotAnnotation">
-        Cuenco Calabaza
-      </h5>
-      <p class="HotspotAnnotation">
-        Vasija no restringida de bordes directos, superficie pulida con baño de pintura roja interior y rojo sobre ante exterior. Imitación de una calabaza 
-      </p>
-    </div>
-  
-    <!-- FIN DE HOSTPOT -->
-  
-    <button slot="ar-button" id="ar-button">Ver en tu espacio</button>
-  
-    <div id="ar-prompt">
-      <img src="../../img/hand.png" />
-    </div>
-  
-    <button id="ar-failure" class="btn btn-danger border-0"> Superficie no válida!</button>
-  
-    <div class="slider " id="slidernone">
-
-      <div class="slides">
-        <button
-          class="slide selected"
-          onclick="switchSrc(this, 'figurinHombre'); uno()"
-          style="
-            background-image: url('../../galery3d/CulturaBahia/modelIMG/figurinHombre.png');
-          "
-        ></button
-        ><button
-          class="slide bg"
-          onclick="switchSrc(this, 'cuencopolipodo'); dos()"
-          style="
-            background-image: url('../../galery3d/CulturaBahia/modelIMG/cuencopolipodo.png');
-          "
-        ></button
-        ><button
-          class="slide"
-          onclick="switchSrc(this, 'figurinMujer');tres()"
-          style="
-            background-image: url('../../galery3d/CulturaBahia/modelIMG/figurinMujer.png');
-          "
-        ></button
-        ><button
-          class="slide"
-          onclick="switchSrc(this, 'cuencoCalabaza'); cuatro()"
-          style="
-            background-image: url('../../galery3d/CulturaBahia/modelIMG/cuencoCalabaza.png');
-          "
-        ></button>
+      <!-- INICIO DE HOSTPOT -->
+      <div
+        id="uno"
+        class="Hotspot descripcion"
+        slot="hotspot-1"
+        data-position="0.050799669623920685m -0.009954949553737238m 0.021779510610449086m"
+        data-normal="0.8082756989568791m -0.1998377918708662m 0.5538549010489525m"
+        data-visibility-attribute="visible"
+      >
+        <h5 class="text-warning text-uppercase HotspotAnnotation">
+          Figurin Silbato
+        </h5>
+        <p class="HotspotAnnotation">
+          Figura hueca de un hombre parado adornado con tocado, orejeras,
+          narigueras, collar, y pulsera. Presencia de engobe rojo y amarillo, y
+          pintura negra en la vestimenta. Entre las manos y los pies sostiene un
+          bastón.
+        </p>
       </div>
-    </div>
-  
-  </model-viewer>
-  
-  <script>
-    const modelViewer = document.querySelector("model-viewer");
-  
-    window.switchSrc = (element, name) => {
-      const base = "../../galery3d/CulturaBahia/modelGLB/" + name;
-      modelViewer.src = base + ".glb";
-      // modelViewer.poster = base + ".webp";
-      const slides = document.querySelectorAll(".slide");
-      slides.forEach((element) => {
-        element.classList.remove("selected");
-      });
-      element.classList.add("selected");
-    };
-  
-    document.querySelector(".slider").addEventListener("beforexrselect", (ev) => {
-      // Keep slider interactions from affecting the XR scene.
-  
-      ev.preventDefault();
-    });
-  
-    function uno() {
-      document.getElementById("dos").classList.add("ocultarHots");
-      document.getElementById("tres").classList.add("ocultarHots");
-      document.getElementById("cuatro").classList.add("ocultarHots");
-      document.getElementById("uno").classList.remove("ocultarHots");
-    }
-  
-    function dos() {
-      document.getElementById("uno").classList.add("ocultarHots");
-      document.getElementById("tres").classList.add("ocultarHots");
-      document.getElementById("cuatro").classList.add("ocultarHots");
-      document.getElementById("dos").classList.remove("ocultarHots");
-    }
-  
-    function tres() {
-      document.getElementById("uno").classList.add("ocultarHots");
-      document.getElementById("dos").classList.add("ocultarHots");
-      document.getElementById("cuatro").classList.add("ocultarHots");
-      document.getElementById("tres").classList.remove("ocultarHots");
-    }
-  
-    function cuatro() {
-      document.getElementById("uno").classList.add("ocultarHots");
-      document.getElementById("dos").classList.add("ocultarHots");
-      document.getElementById("tres").classList.add("ocultarHots");
-      document.getElementById("cuatro").classList.remove("ocultarHots");
-    }
-  
-    window.onload = uno();
-  </script>
-  
-  <!-- INICIO DE STYLE MODEL VIEW-->
-  <style>
-    /* This keeps child nodes hidden while the element loads */
-    :not(:defined) > * {
-      display: none;
-    }
-    body{
-      background-image: linear-gradient(to bottom, #46403e, #000000);
-    }
-  
-    
-  
-    model-viewer {
-      padding-top: 5px;
-      overflow-x: hidden;
-      width: 100%;
-      height: 47rem;
-      
-    }
-  
-    #ar-button {
-      background-image: url(../../img/ic_view_in_ar_new_googblue_48dp.png);
-      background-repeat: no-repeat;
-      background-size: 20px 20px;
-      background-position: 12px 50%;
-      background-color: #fff;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-      bottom: 132px;
-      padding: 0px 16px 0px 40px;
-      font-family: Roboto Regular, Helvetica Neue, sans-serif;
-      font-size: 14px;
-      color: #4285f4;
-      height: 36px;
-      line-height: 36px;
-      border-radius: 18px;
-      border: 1px solid #dadce0;
-    }
-  
-    #ar-button:active {
-      background-color: #e8eaed;
-    }
-  
-    #ar-button:focus {
-      outline: none;
-    }
-  
-    #ar-button:focus-visible {
-      outline: 1px solid #4285f4;
-    }
-  
-    @keyframes circle {
-      from {
-        transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg);
-      }
-      to {
-        transform: translateX(-50%) rotate(360deg) translateX(50px)
-          rotate(-360deg);
-      }
-    }
-  
-    @keyframes elongate {
-      from {
-        transform: translateX(100px);
-      }
-      to {
-        transform: translateX(-100px);
-      }
-    }
-  
-    model-viewer > #ar-prompt {
-      position: absolute;
-      left: 50%;
-      bottom: 175px;
-      animation: elongate 2s infinite ease-in-out alternate;
-      display: none;
-    }
-  
- 
-    model-viewer[ar-status="session-started"] > #ar-prompt {
-      display: block;
-    }
-  
-    model-viewer > #ar-prompt > img {
-      animation: circle 4s linear infinite;
-    }
-  
-    model-viewer > #ar-failure {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 175px;
-      display: none;
-    }
-  
-    model-viewer[ar-tracking="not-tracking"] > #ar-failure {
-      display: block;
-    }
-  
-    .slider {
-      width: 100%;
-      text-align: center;
-      overflow: hidden;
-      position: absolute;
-      bottom: 16px;
-    }
-  
-    .slides {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-    }
-  
-    .slide {
-      scroll-snap-align: start;
-      flex-shrink: 0;
-      width: 100px;
-      height: 100px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: rgba(51, 51, 51, 0.747);
-      margin-right: 10px;
-      border-radius: 10px;
-      border: none;
-      display: flex;
-    }
-  
-    .slide.selected {
-      border: 2px solid #4285f4;
-    }
-  
-    .slide:focus {
-      outline: none;
-    }
-  
-    .slide:focus-visible {
-      outline: 1px solid #4285f4;
-    }
-    .descripcion {
-      background-color: #00000085;
-      position: absolute;
-      width: 350px;
-      height: auto;
-      color: #ffffff;
-      padding: 15px;
-      border-radius: 20px;
-      overflow: hidden;
-      z-index: 1000;
-    }
 
-    .descripcion p{
-      font-size: 0.8rem;
-    }
-  
-    @media only screen and (max-width: 720px) {
-      .descripcion {
-        width: 250px;
-        padding: 15px;
+      <div
+        id="dos"
+        class="Hotspot descripcion"
+        slot="hotspot-2"
+        data-position="0.15443919612619647m 0.03602601532209528m 0.051896997152981024m"
+        data-normal="0.5251379600150672m -0.8192478151887278m 0.2303543797276489m"
+        data-visibility-attribute="visible"
+      >
+        <h5 class="text-warning text-uppercase HotspotAnnotation">
+          cuenco polipodo
+        </h5>
+        <p class="HotspotAnnotation">
+          Cuenco profundo con bordes directos irregulares y base convexas; patas
+          bifurcadas gruesas. 5 patas bifurcadas gruesas.
+        </p>
+      </div>
+
+      <div
+        id="tres"
+        class="Hotspot descripcion"
+        slot="hotspot-3"
+        data-position="-0.028054007514858925m 0.026177941850307182m 0.03353292160872536m"
+        data-normal="-0.09848430824887491m -0.17960123483438756m 0.9787973423925423m"
+        data-visibility-attribute="visible"
+      >
+        <h5 class="text-warning text-uppercase HotspotAnnotation">
+          Figurin Silbato
+        </h5>
+        <p class="HotspotAnnotation">
+          Figura hueca de una mujer parada con dos huecos en la parte de
+          adelante y 3 en la parte de atrás
+        </p>
+      </div>
+
+      <div
+        id="cuatro"
+        class="Hotspot descripcion"
+        slot="hotspot-4"
+        data-position="-0.034898793892426866m 0.04211772691379621m 0.09732630259745911m"
+        data-normal="-0.30029998909913336m -0.12360609841000379m 0.9458020136280728m"
+        data-visibility-attribute="visible"
+      >
+        <h5 class="text-warning text-uppercase HotspotAnnotation">
+          Cuenco Calabaza
+        </h5>
+        <p class="HotspotAnnotation">
+          Vasija no restringida de bordes directos, superficie pulida con baño
+          de pintura roja interior y rojo sobre ante exterior. Imitación de una
+          calabaza
+        </p>
+      </div>
+
+      <!-- FIN DE HOSTPOT -->
+
+      <button slot="ar-button" id="ar-button">Ver en tu espacio</button>
+
+      <div id="ar-prompt">
+        <img src="../../img/hand.png" />
+      </div>
+
+      <button id="ar-failure" class="btn btn-danger border-0">
+        Superficie no válida!
+      </button>
+
+      <div class="slider" id="slidernone">
+        <div class="slides">
+          <button
+            class="slide selected"
+            onclick="switchSrc(this, 'figurinHombre'); uno()"
+            style="
+              background-image: url('../../galery3d/CulturaBahia/modelIMG/figurinHombre.png');
+            "
+          ></button
+          ><button
+            class="slide bg"
+            onclick="switchSrc(this, 'cuencopolipodo'); dos()"
+            style="
+              background-image: url('../../galery3d/CulturaBahia/modelIMG/cuencopolipodo.png');
+            "
+          ></button
+          ><button
+            class="slide"
+            onclick="switchSrc(this, 'figurinMujer');tres()"
+            style="
+              background-image: url('../../galery3d/CulturaBahia/modelIMG/figurinMujer.png');
+            "
+          ></button
+          ><button
+            class="slide"
+            onclick="switchSrc(this, 'cuencoCalabaza'); cuatro()"
+            style="
+              background-image: url('../../galery3d/CulturaBahia/modelIMG/cuencoCalabaza.png');
+            "
+          ></button>
+        </div>
+      </div>
+    </model-viewer>
+
+    <script>
+      const modelViewer = document.querySelector("model-viewer");
+
+      window.switchSrc = (element, name) => {
+        const base = "../../galery3d/CulturaBahia/modelGLB/" + name;
+        modelViewer.src = base + ".glb";
+        // modelViewer.poster = base + ".webp";
+        const slides = document.querySelectorAll(".slide");
+        slides.forEach((element) => {
+          element.classList.remove("selected");
+        });
+        element.classList.add("selected");
+      };
+
+      document
+        .querySelector(".slider")
+        .addEventListener("beforexrselect", (ev) => {
+          // Keep slider interactions from affecting the XR scene.
+
+          ev.preventDefault();
+        });
+
+      function uno() {
+        document.getElementById("dos").classList.add("ocultarHots");
+        document.getElementById("tres").classList.add("ocultarHots");
+        document.getElementById("cuatro").classList.add("ocultarHots");
+        document.getElementById("uno").classList.remove("ocultarHots");
       }
-  
-      .descripcion h5 {
-        font-size: 20px;
+
+      function dos() {
+        document.getElementById("uno").classList.add("ocultarHots");
+        document.getElementById("tres").classList.add("ocultarHots");
+        document.getElementById("cuatro").classList.add("ocultarHots");
+        document.getElementById("dos").classList.remove("ocultarHots");
       }
-    }
-  
-    @media only screen and (max-width: 540px) {
+
+      function tres() {
+        document.getElementById("uno").classList.add("ocultarHots");
+        document.getElementById("dos").classList.add("ocultarHots");
+        document.getElementById("cuatro").classList.add("ocultarHots");
+        document.getElementById("tres").classList.remove("ocultarHots");
+      }
+
+      function cuatro() {
+        document.getElementById("uno").classList.add("ocultarHots");
+        document.getElementById("dos").classList.add("ocultarHots");
+        document.getElementById("tres").classList.add("ocultarHots");
+        document.getElementById("cuatro").classList.remove("ocultarHots");
+      }
+
+      window.onload = uno();
+    </script>
+
+    <!-- INICIO DE STYLE MODEL VIEW-->
+    <style>
+      /* This keeps child nodes hidden while the element loads */
+      :not(:defined) > * {
+        display: none;
+      }
+      body {
+        background-image: linear-gradient(to bottom, #46403e, #000000);
+      }
+
       model-viewer {
-        height:  40rem;
+        padding-top: 5px;
+        overflow-x: hidden;
+        width: 100%;
+        height: 47rem;
       }
-  
+
+      #ar-button {
+        background-image: url(../../img/ic_view_in_ar_new_googblue_48dp.png);
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: 12px 50%;
+        background-color: #fff;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        bottom: 132px;
+        padding: 0px 16px 0px 40px;
+        font-family: Roboto Regular, Helvetica Neue, sans-serif;
+        font-size: 14px;
+        color: #4285f4;
+        height: 36px;
+        line-height: 36px;
+        border-radius: 18px;
+        border: 1px solid #dadce0;
+      }
+
+      #ar-button:active {
+        background-color: #e8eaed;
+      }
+
+      #ar-button:focus {
+        outline: none;
+      }
+
+      #ar-button:focus-visible {
+        outline: 1px solid #4285f4;
+      }
+
+      @keyframes circle {
+        from {
+          transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg);
+        }
+        to {
+          transform: translateX(-50%) rotate(360deg) translateX(50px)
+            rotate(-360deg);
+        }
+      }
+
+      @keyframes elongate {
+        from {
+          transform: translateX(100px);
+        }
+        to {
+          transform: translateX(-100px);
+        }
+      }
+
+      model-viewer > #ar-prompt {
+        position: absolute;
+        left: 50%;
+        bottom: 175px;
+        animation: elongate 2s infinite ease-in-out alternate;
+        display: none;
+      }
+
+      model-viewer[ar-status="session-started"] > #ar-prompt {
+        display: block;
+      }
+
+      model-viewer > #ar-prompt > img {
+        animation: circle 4s linear infinite;
+      }
+
+      model-viewer > #ar-failure {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 175px;
+        display: none;
+      }
+
+      model-viewer[ar-tracking="not-tracking"] > #ar-failure {
+        display: block;
+      }
+
+      .slider {
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+        position: absolute;
+        bottom: 16px;
+      }
+
+      .slides {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .slide {
+        scroll-snap-align: start;
+        flex-shrink: 0;
+        width: 100px;
+        height: 100px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: rgba(51, 51, 51, 0.747);
+        margin-right: 10px;
+        border-radius: 10px;
+        border: none;
+        display: flex;
+      }
+
+      .slide.selected {
+        border: 2px solid #4285f4;
+      }
+
+      .slide:focus {
+        outline: none;
+      }
+
+      .slide:focus-visible {
+        outline: 1px solid #4285f4;
+      }
       .descripcion {
-        width: 180px;
-        padding: 10px;
-        padding-bottom: 0px;
+        background-color: #00000085;
+        position: absolute;
+        width: 350px;
+        height: auto;
+        color: #ffffff;
+        padding: 15px;
+        border-radius: 20px;
+        overflow: hidden;
+        z-index: 1000;
       }
-      .descripcion h5 {
-        font-size: 10px;
-      }
-  
+
       .descripcion p {
-        font-size: 11px;
+        font-size: 0.8rem;
       }
-    }
-  
-    .ocultarHots {
-      display: none !important;
-    }
-  </style>
-  <!-- FIN STYLE -->
-  
-  <!-- FIN CULTURA BAHIA -->
-  
 
+      @media only screen and (max-width: 720px) {
+        .descripcion {
+          width: 250px;
+          padding: 15px;
+        }
 
+        .descripcion h5 {
+          font-size: 20px;
+        }
+      }
 
-<footer class="text-muted py-4 cfot footer">
-  <div class="container">
-      <p class="float-end mb-1 ">
+      @media only screen and (max-width: 540px) {
+        model-viewer {
+          height: 40rem;
+        }
 
+        .descripcion {
+          width: 180px;
+          padding: 10px;
+          padding-bottom: 0px;
+        }
+        .descripcion h5 {
+          font-size: 10px;
+        }
+
+        .descripcion p {
+          font-size: 11px;
+        }
+      }
+
+      .ocultarHots {
+        display: none !important;
+      }
+    </style>
+    <!-- FIN STYLE -->
+
+    <!-- FIN CULTURA BAHIA -->
+
+    <footer class="text-muted py-4 cfot footer">
+      <div class="container">
+        <p class="float-end mb-1">
           <a href="../../" class="text-warning text-decoration-none">INICIO</a>
-      </p>
-      <p class="mb-1">POWER BY &copy; HYGRAFIK</p>
-      <p> 2022</p>
-  </div>
-</footer>
+        </p>
+        <p class="mb-1">POWER BY &copy; HYGRAFIK</p>
+        <p>2022</p>
+      </div>
+    </footer>
 
-  <script type="module"  src="../../resources/js/model-viewer.min.js" ></script>
-  <script src="../../resources/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
-</body>
-
+    <script type="module" src="../../resources/js/model-viewer.min.js"></script>
+    <script
+      src="../../resources/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
