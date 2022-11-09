@@ -15,164 +15,137 @@
   </head>
 
   <body>
-    
-     <style>
-        /* This keeps child nodes hidden while the element loads */
-        
-        body {
-            background-color: #46403e;
-        }
-  
-        model-viewer {
-          padding-top: 5px;
-          overflow-x: hidden;
-          width: 100%;
-          height: 47rem;
-        }
-  
-        #ar-button {
-          background-image: url(img/ic_view_in_ar_new_googblue_48dp.png);
-          background-repeat: no-repeat;
-          background-size: 20px 20px;
-          background-position: 12px 50%;
-          background-color: #fff;
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-          white-space: nowrap;
-          bottom: 132px;
-          padding: 0px 16px 0px 40px;
-          font-family: Roboto Regular, Helvetica Neue, sans-serif;
-          font-size: 14px;
-          color: #4285f4;
-          height: 36px;
-          line-height: 36px;
-          border-radius: 18px;
-          border: 1px solid #dadce0;
-        }
-  
-        #ar-button:active {
-          background-color: #e8eaed;
-        }
-  
-        #ar-button:focus {
-          outline: none;
-        }
-  
-        #ar-button:focus-visible {
-          outline: 1px solid #4285f4;
-        }
-  
-        @keyframes circle {
-          from {
-            transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg);
-          }
-          to {
-            transform: translateX(-50%) rotate(360deg) translateX(50px)
-              rotate(-360deg);
-          }
-        }
-  
-        @keyframes elongate {
-          from {
-            transform: translateX(100px);
-          }
-          to {
-            transform: translateX(-100px);
-          }
-        }
-  
-        model-viewer > #ar-prompt {
-          position: absolute;
-          left: 50%;
-          bottom: 175px;
-          animation: elongate 2s infinite ease-in-out alternate;
-          display: none;
-        }
-  
-        model-viewer[ar-status="session-started"] > #ar-prompt {
-          display: block;
-        }
-  
-        model-viewer > #ar-prompt > img {
-          animation: circle 4s linear infinite;
-        }
-  
-        model-viewer > #ar-failure {
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-          bottom: 175px;
-          display: none;
-        }
-  
-        model-viewer[ar-tracking="not-tracking"] > #ar-failure {
-          display: block;
-        }
-  
-  
+    <style>
+      /* This keeps child nodes hidden while the element loads */
+
+      body {
+        background-color: #46403e;
+      }
+
+      .mod {
+        background-color: #000000dc !important;
+      }
+
+      .edt {
+        margin-top: 50px;
+      }
+
+      .bg-brown {
+        background-color: #46403e00 !important;
+      }
+
+      model-viewer {
+        padding-top: 5px;
+        overflow-x: hidden;
+        width: 100%;
+        height: 47rem;
+      }
+
+      #ar-button {
+        background-image: url(img/ic_view_in_ar_new_googblue_48dp.png);
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: 12px 50%;
+        background-color: #fff;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        bottom: 132px;
+        padding: 0px 16px 0px 40px;
+        font-family: Roboto Regular, Helvetica Neue, sans-serif;
+        font-size: 14px;
+        color: #4285f4;
+        height: 36px;
+        line-height: 36px;
+        border-radius: 18px;
+        border: 1px solid #dadce0;
+      }
+
+      #ar-button:active {
+        background-color: #e8eaed;
+      }
+
+      #ar-button:focus {
+        outline: none;
+      }
+
+      #ar-button:focus-visible {
+        outline: 1px solid #4285f4;
+      }
+
+      model-viewer > #ar-failure {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 175px;
+        display: none;
+      }
+
+      model-viewer[ar-tracking="not-tracking"] > #ar-failure {
+        display: block;
+      }
+
+      .descripcion {
+        background-color: #00000085;
+        position: absolute;
+        width: 350px;
+        height: auto;
+        color: #ffffff;
+        padding: 15px;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .descripcion p {
+        font-size: 0.8rem;
+      }
+
+      @media only screen and (max-width: 720px) {
         .descripcion {
-          background-color: #00000085;
-          position: absolute;
-          width: 350px;
-          height: auto;
-          color: #ffffff;
+          width: 250px;
           padding: 15px;
-          border-radius: 20px;
-          overflow: hidden;
-     
         }
-  
+
+        .descripcion h5 {
+          font-size: 20px;
+        }
+      }
+
+      @media only screen and (max-width: 580px) {
+        model-viewer {
+          height: 35rem;
+        }
+
+        .descripcion {
+          width: 180px;
+          padding: 10px;
+          padding-bottom: 0px;
+        }
+
+        .descripcion h5 {
+          font-size: 10px;
+        }
+
         .descripcion p {
-          font-size: 0.8rem;
+          font-size: 11px;
         }
-  
-        @media only screen and (max-width: 720px) {
-          .descripcion {
-            width: 250px;
-            padding: 15px;
-          }
-  
-          .descripcion h5 {
-            font-size: 20px;
-          }
-        }
-  
-        @media only screen and (max-width: 540px) {
-          model-viewer {
-            height: 42rem;
-          }
-  
-          .descripcion {
-            width: 180px;
-            padding: 10px;
-            padding-bottom: 0px;
-          }
-          .descripcion h5 {
-            font-size: 10px;
-          }
-  
-          .descripcion p {
-            font-size: 11px;
-          }
-        }
-  
-       
-      </style>
+      }
+    </style>
 
     <div class="container-fluid">
-      <div class="container">
+      <div class="container edt">
         <div class="text-center lead pb-3">
           <h4 class="text-warning">MUSEO ARQUEOLÓGICO SALANGO</h4>
           <p class="text-white">
-            Seleccione una cultura para visualizar los objetos en
+            Despliegue una cultura para visualizar los objetos en
             <strong>Realidad Aumentada</strong>
           </p>
         </div>
 
-        <div class="accordion" id="accordionExample">
+        <div class="accordion " id="accordionExample">
           <!-- ------------------------------------------------------ -->
-          <div class="accordion-item">
+          <div class="accordion-item border-0 border-bottom">
             <h2 class="accordion-header" id="headingOne">
               <button
                 class="accordion-button d-flex gap-2 w-100 justify-content-between"
@@ -198,122 +171,232 @@
               aria-labelledby="headingOne"
               data-bs-parent="#accordionExample"
             >
-              <div class="accordion-body">
+              <div class="accordion-body mod">
+
+
+
+
                 <!-- -------- -->
-                <div class="list-group">
-                  <button
-                    type="button"
-                    class="list-group-item list-group-item-action"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalbahia"
-                    data-bs-target="#staticBackdrop"
-                  >
-                    Figurin Silbato
-                  </button>
+                
 
-                  <div
-                    class="modal fade"
-                    id="modalbahia"
-                    tabindex="-1"
-                    data-bs-backdrop="static"
-                    data-bs-keyboard="false"
-                    aria-labelledby="staticBackdropLabel"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog modal-dialog-scrollable">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">
-                            Modal title
-                          </h1>
-                          <button
-                            type="button"
-                            class="btn btn-danger"
-                            data-bs-dismiss="modal"
-                          >
-                            cerrar
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <model-viewer
-                            src="galery3d/CulturaBahia/modelGLB/figurinHombre.glb"
-                            shadow-intensity="1"
-                            ar
-                            camera-controls
-                            auto-rotate
-                            touch-action="pan-y"
-                           
-                          >
-                            <!-- INICIO DE HOSTPOT -->
-                            <div
-                              id="uno"
-                              class="Hotspot descripcion"
-                              slot="hotspot-1"
-                              data-position="0.050799669623920685m -0.009954949553737238m 0.021779510610449086m"
-                              data-normal="0.8082756989568791m -0.1998377918708662m 0.5538549010489525m"
-                              data-visibility-attribute="visible"
-                            >
-                              <h5
-                                class="text-warning text-uppercase HotspotAnnotation"
-                              >
-                                Figurin Silbato
-                              </h5>
-                              <p class="HotspotAnnotation">
-                                Figura hueca de un hombre parado adornado con
-                                tocado, orejeras, narigueras, collar, y pulsera.
-                                Presencia de engobe rojo y amarillo, y pintura
-                                negra en la vestimenta. Entre las manos y los
-                                pies sostiene un bastón.
-                              </p>
-                            </div>
-
-                            <!-- FIN DE HOSTPOT -->
-
-                            <button slot="ar-button" id="ar-button">
-                              Ver en tu espacio
-                            </button>
-
-                            <div id="ar-prompt">
-                              <img src="img/hand.png" />
-                            </div>
-
-                            <button
-                              id="ar-failure"
-                              class="btn btn-danger border-0"
-                            >
-                              Superficie no válida!
-                            </button>
-                          </model-viewer>
-                        </div>
-                      </div>
-                    </div>
+                <div id="bahia1" class="carousel slide" data-bs-ride="true">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#bahia1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#bahia1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#bahia1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#bahia1" data-bs-slide-to="3" aria-label="Slide 4"></button>
                   </div>
-                  <!-- -------- -->
+                  <div class="carousel-inner">
 
-                  <button
-                    type="button"
-                    class="list-group-item list-group-item-action"
-                  >
-                    Cuenco Polipodo
+                    <div class="carousel-item active">
+                      <model-viewer
+                      src="/galery3d/CulturaBahia/modelGLB/figurinHombre.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                      
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+                      <div
+                        id="uno"
+                        class="Hotspot descripcion"
+                        slot="hotspot-1"
+                        data-position="0.050799669623920685m -0.009954949553737238m 0.021779510610449086m"
+                        data-normal="0.8082756989568791m -0.1998377918708662m 0.5538549010489525m"
+                        data-visibility-attribute="visible"
+                      >
+                        <h5
+                          class="text-warning text-uppercase HotspotAnnotation"
+                        >
+                          Figurin Silbato
+                        </h5>
+                        <p class="HotspotAnnotation">
+                          Figura hueca de un hombre parado adornado con
+                          tocado, orejeras, narigueras, collar, y pulsera.
+                          Presencia de engobe rojo y amarillo, y pintura
+                          negra en la vestimenta. Entre las manos y los
+                          pies sostiene un bastón.
+                        </p>
+                      </div>
+
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+                    <div class="carousel-item">
+                      <model-viewer
+                      src="/galery3d/CulturaBahia/modelGLB/cuencopolipodo.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+
+                      <div
+                        id="dos"
+                        class="Hotspot descripcion"
+                        slot="hotspot-2"
+                        data-position="0.15443919612619647m 0.03602601532209528m 0.051896997152981024m"
+                        data-normal="0.5251379600150672m -0.8192478151887278m 0.2303543797276489m"
+                        data-visibility-attribute="visible"
+                      >
+                        <h5
+                          class="text-warning text-uppercase HotspotAnnotation"
+                        >
+                          cuenco polipodo
+                        </h5>
+                        <p class="HotspotAnnotation">
+                          Cuenco profundo con bordes directos irregulares
+                          y base convexas; patas bifurcadas gruesas. 5
+                          patas bifurcadas gruesas.
+                        </p>
+                      </div>
+
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+                    <div class="carousel-item">
+                      <model-viewer
+                      src="/galery3d/CulturaBahia/modelGLB/figurinMujer.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+
+                      <div
+                        id="tres"
+                        class="Hotspot descripcion"
+                        slot="hotspot-3"
+                        data-position="-0.028054007514858925m 0.026177941850307182m 0.03353292160872536m"
+                        data-normal="-0.09848430824887491m -0.17960123483438756m 0.9787973423925423m"
+                        data-visibility-attribute="visible"
+                      >
+                        <h5
+                          class="text-warning text-uppercase HotspotAnnotation"
+                        >
+                          Figurin Silbato
+                        </h5>
+                        <p class="HotspotAnnotation">
+                          Figura hueca de una mujer parada con dos huecos
+                          en la parte de adelante y 3 en la parte de atrás
+                        </p>
+                      </div>
+
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+                    <div class="carousel-item">
+                      <model-viewer
+                      src="/galery3d/CulturaBahia/modelGLB/cuencoCalabaza.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+
+                      <div
+                      id="cuatro"
+                      class="Hotspot descripcion"
+                      slot="hotspot-4"
+                      data-position="-0.034898793892426866m 0.04211772691379621m 0.09732630259745911m"
+                      data-normal="-0.30029998909913336m -0.12360609841000379m 0.9458020136280728m"
+                      data-visibility-attribute="visible"
+                    >
+                      <h5 class="text-warning text-uppercase HotspotAnnotation">
+                        Cuenco Calabaza
+                      </h5>
+                      <p class="HotspotAnnotation">
+                        Vasija no restringida de bordes directos, superficie pulida con baño
+                        de pintura roja interior y rojo sobre ante exterior. Imitación de una
+                        calabaza
+                      </p>
+                    </div>
+
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+
+
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#bahia1" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
                   </button>
-                  <button
-                    type="button"
-                    class="list-group-item list-group-item-action"
-                  >
-                    figurin Silbato
-                  </button>
-                  <button
-                    type="button"
-                    class="list-group-item list-group-item-action"
-                  >
-                    Cuenco Calabaza
+                  <button class="carousel-control-next" type="button" data-bs-target="#bahia1" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
                   </button>
                 </div>
+
+
+                <!-- -->
               </div>
             </div>
           </div>
+
+
+
+
+
+
           <!-- ------------------------------------- -->
-          <div class="accordion-item">
+          <div class="accordion-item border-0 border-bottom">
             <h2 class="accordion-header" id="headingTwo">
               <button
                 class="accordion-button collapsed d-flex gap-2 w-100 justify-content-between"
@@ -339,12 +422,266 @@
               aria-labelledby="headingTwo"
               data-bs-parent="#accordionExample"
             >
-              <div class="accordion-body"></div>
+              <div class="accordion-body mod">
+               
+                  <!-- ------------- -->
+
+
+
+
+                
+                <div id="bahia2" class="carousel slide" data-bs-ride="true">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#bahia2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#bahia2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#bahia2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#bahia2" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#bahia2" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  </div>
+                  <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                      <model-viewer
+                      src="galery3d/CulturaBahia2/modelGLB/compoteraDoble.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+                      <div
+                      id="uno"
+                      class="Hotspot descripcion"
+                      slot="hotspot-1"
+                      data-position="0.045386907683579975m 0.05359699144727713m 0.17987543344565587m"
+                      data-normal="0.40501358149081546m -0.5702943374466926m 0.7146526201478733m"
+                      data-visibility-attribute="visible"
+                    >
+                      <h5 class="text-warning text-uppercase HotspotAnnotation">
+                        compotera Doble
+                      </h5>
+                      <p class="HotspotAnnotation">
+                        son dos platos con bases pedestales de contornos compuestos, unidos
+                        pos dos asas macizas horizontales,Superficies bien pulidas y ahumadas
+                        decoradas con pintura iridiscente rosadas
+                      </p>
+                    </div>
+
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+                    <div class="carousel-item">
+                      <model-viewer
+                      src="galery3d/CulturaBahia2/modelGLB/ollaGlobular.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+
+                      <div
+                      id="dos"
+                      class="Hotspot descripcion"
+                      slot="hotspot-2"
+                      data-position="0.037340418256054046m 0.1348620952678708m 0.10516828719734955m"
+                      data-normal="0.2224949472114759m 0.7343245372286381m 0.6412982710793077m"
+                      data-visibility-attribute="visible"
+                    >
+                      <h5 class="text-warning text-uppercase HotspotAnnotation">
+                        olla Globular
+                      </h5>
+                      <p class="HotspotAnnotation">
+                        Vasija roja pulida con decoración con técnica de pintura negativa.
+                      </p>
+                    </div>
+
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+                    <div class="carousel-item">
+                      <model-viewer
+                      src="galery3d/CulturaBahia2/modelGLB/ollaBahia.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+
+                      <div
+                      id="tres"
+                      class="Hotspot descripcion"
+                      slot="hotspot-3"
+                      data-position="-0.08637650452458526m 0.12120947543886035m 0.12139849204487735m"
+                      data-normal="-0.43320836644220273m 0.7423555339262878m 0.5111152242826411m"
+                      data-visibility-attribute="visible"
+                    >
+                      <h5 class="text-warning text-uppercase HotspotAnnotation">
+                        olla Bahia
+                      </h5>
+                      <p class="HotspotAnnotation">
+                        Vasija carenada de boca restringida. Superficie exterior decorada con
+                        pintura iridiscente rosada sobre una superficie ahumada y pulida,
+                        tiene tres bandas paralelas.
+                      </p>
+                    </div>
+
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+                    <div class="carousel-item">
+                      <model-viewer
+                      src="galery3d/CulturaBahia2/modelGLB/cuencoCarenado.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+
+                      <div
+                      id="cuatro"
+                      class="Hotspot descripcion"
+                      slot="hotspot-4"
+                      data-position="-0.11145870768037354m 0.07096085255346435m 0.16359376342051907m"
+                      data-normal="-0.5229500586165091m 0.38004328884650984m 0.7629484483211945m"
+                      data-visibility-attribute="visible"
+                    >
+                      <h5 class="text-warning text-uppercase HotspotAnnotation">
+                        Cuenco Carenado
+                      </h5>
+                      <p class="HotspotAnnotation">
+                        vasija restringida a partir del carenado del hombro. base
+                        concavo-convexo, algo inestable y solamente alisada. El resto bien
+                        pulido con pintura iridiscente. En el interior del diseño con bandas
+                        en semicírculos y puntos, es simétrico
+                      </p>
+                    </div>
+
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+
+                    
+                    <div class="carousel-item">
+                      <model-viewer
+                      src="galery3d/CulturaBahia2/modelGLB/botellaSilbato.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+
+                      <div
+                      id="cinco"
+                      class="Hotspot descripcion"
+                      slot="hotspot-5"
+                      data-position="0.03834362528293642m -0.013763914188493646m 0.06558354460469919m"
+                      data-normal="-0.41693542197319733m 0.4916491171545515m 0.7644906798026921m"
+                      data-visibility-attribute="visible"
+                    >
+                      <h5 class="text-warning text-uppercase HotspotAnnotation">
+                        Botella Silbato
+                      </h5>
+                      <p class="HotspotAnnotation">
+                        Entre las manos y los pies sostiene un bastón. Consta de dos cuerpos
+                        intercomunicados. En uno se encuentra el pico o vertedera, mientras
+                        que, en el otro, una representación zoomorfa de un personaje en
+                        posición sentada.
+                      </p>
+                    </div>
+
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#bahia2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#bahia2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+
+                  <!-- ------------------- -->
+              </div>
             </div>
           </div>
 
+
+
           <!-- ------------------------------------------------- -->
-          <div class="accordion-item">
+          <div class="accordion-item border-0 border-bottom">
             <h2 class="accordion-header" id="headingThree">
               <button
                 class="accordion-button collapsed d-flex gap-2 w-100 justify-content-between"
@@ -370,11 +707,128 @@
               aria-labelledby="headingThree"
               data-bs-parent="#accordionExample"
             >
-              <div class="accordion-body"></div>
+              <div class="accordion-body mod">
+
+
+                <div id="cguangala" class="carousel slide" data-bs-ride="true">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#cguangala" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#cguangala" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                   
+                  </div>
+                  <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                      <model-viewer
+                      src="galery3d/CulturaGuangala/modelGLB/figurinSilbato.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+                      <div
+                      id="uno"
+                      class="Hotspot descripcion"
+                      slot="hotspot-1"
+                      data-position="0.0035751499310218695m 0.08919814641482046m 0.03448823624111043m"
+                      data-normal="0.08843102225413725m 0.2152307502740495m 0.9725511186768323m"
+                      data-visibility-attribute="visible"
+                    >
+                      <h5 class="text-warning text-uppercase HotspotAnnotation">
+                        Figurin Silbato
+                      </h5>
+                      <p class="HotspotAnnotation">
+                        figurín hueco de un hombre parado con los brazos en jarra y piernas
+                        separadas, adornada con pectoral, narigueras y orejeras, Cara y
+                        adornos modelados al pastillaje; ojos y boca formados por líneas
+                        incisas. Objeto recuperado en un entierro.
+                      </p>
+                    </div>
+
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+                    <div class="carousel-item">
+                      <model-viewer
+                      src="galery3d/CulturaGuangala/modelGLB/ollaGlobular.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+
+                      <div
+                      id="dos"
+                      class="Hotspot descripcion"
+                      slot="hotspot-2"
+                      data-position="-0.027694341131094227m 0.05197853445957355m 0.09798921136192756m"
+                      data-normal="-0.2855116136345699m 0.40305970133069796m 0.8694975535577962m"
+                      data-visibility-attribute="visible"
+                    >
+                      <h5 class="text-warning text-uppercase HotspotAnnotation">
+                        olla Globular
+                      </h5>
+                      <p class="HotspotAnnotation">
+                        vasija restringida de cuello evertido, hombro recto y base convexa,
+                        Cuerpo ovoide, Superficies irregulares,Pulido con guijarro, tosco y
+                        disparejo.
+                      </p>
+                    </div>
+
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+
+
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#cguangala" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#cguangala" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+
+
+              </div>
             </div>
           </div>
           <!-- ---------------------------------------------------- -->
-          <div class="accordion-item">
+
+
+
+
+          <div class="accordion-item border-0 border-bottom">
             <h2 class="accordion-header" id="headingfour">
               <button
                 class="accordion-button collapsed d-flex gap-2 w-100 justify-content-between"
@@ -400,12 +854,165 @@
               aria-labelledby="headingfour"
               data-bs-parent="#accordionExample"
             >
-              <div class="accordion-body"></div>
+              <div class="accordion-body mod">
+
+
+
+                <div id="cmanteña" class="carousel slide" data-bs-ride="true">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#cmanteña" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#cmanteña" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#cmanteña" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                   
+                  </div>
+                  <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                      <model-viewer
+                      src="galery3d/CulturaMantena/modelGLB/pesoRed.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+                      <div
+                      id="uno"
+                      class="Hotspot descripcion"
+                      slot="hotspot-1"
+                      data-position="-0.14560080934037314m 0.059132420180835844m 0.10390416183291375m"
+                      data-normal="-0.23904939407758247m 0.7568110088924661m 0.6083522696680833m"
+                      data-visibility-attribute="visible"
+                    >
+                      <h5 class="text-warning text-uppercase HotspotAnnotation">
+                        Peso de Red
+                      </h5>
+                      <p class="HotspotAnnotation">
+                        lechuza tallada en piedra arenisca con dos agujeros en la parte superior y probablemente utiliza como un peso de red.
+                      </p>
+                    </div>
+
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+                    <div class="carousel-item">
+                      <model-viewer
+                      src="galery3d/CulturaMantena/modelGLB/vasijaGlobular.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+
+                      <div
+                      id="dos"
+                      class="Hotspot descripcion"
+                      slot="hotspot-2"
+                      data-position="-0.11705012486377947m 0.06867972563161262m 0.012479375571971322m"
+                      data-normal="-0.3607256029362693m 0.9310612995454692m 0.05478955990849904m"
+                      data-visibility-attribute="visible"
+                    >
+                      <h5 class="text-warning text-uppercase HotspotAnnotation">
+                        vasija Globular
+                      </h5>
+                      <p class="HotspotAnnotation">
+                        Vasija globular de cuello evertido, alisada en el interior y exterior, base cóncava. La vasija fue utilizada para enterramientos.
+                      </p>
+                    </div>
+
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+                    <div class="carousel-item">
+                      <model-viewer
+                      src="galery3d/CulturaMantena/modelGLB/vasijaGlobular2.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+                      <div
+                      id="tres"
+                      class="Hotspot descripcion"
+                      slot="hotspot-3"
+                      data-position="-0.18402258821449102m 0.06216958252548055m -0.002979010683113105m"
+                      data-normal="-0.9421786232490462m 0.3312234916582721m 0.05089636987285573m"
+                      data-visibility-attribute="visible"
+                    >
+                      <h5 class="text-warning text-uppercase HotspotAnnotation">
+                        vasija Globular
+                      </h5>
+                      <p class="HotspotAnnotation">
+                        Vasija globular con cuello evertido, exterior corrugado, interior alisado y con señales de hollín. La base es cóncava. La olla estuvo probablemente enterrada de manera de los hornos tradicionales de hoy en día
+                      </p>
+                    </div>
+
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+
+
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#cmanteña" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#cmanteña" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+
+
+
+
+              </div>
             </div>
           </div>
 
           <!-- ---------------------------------------------------- -->
-          <div class="accordion-item">
+          <div class="accordion-item border-0 border-bottom">
             <h2 class="accordion-header" id="headingfive">
               <button
                 class="accordion-button collapsed d-flex gap-2 w-100 justify-content-between"
@@ -431,12 +1038,128 @@
               aria-labelledby="headingfive"
               data-bs-parent="#accordionExample"
             >
-              <div class="accordion-body"></div>
+              <div class="accordion-body mod">
+
+
+                <div id="cchorrera" class="carousel slide" data-bs-ride="true">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#cchorrera" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#cchorrera" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                   
+                  </div>
+                  <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                      <model-viewer
+                      src="galery3d/CulturaChorrera/modelGLB/botellaSilbato.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+                      <div
+                      id="uno"
+                      class="Hotspot descripcion"
+                      slot="hotspot-1"
+                      data-position="0.16128320042216446m 0.04974120364806835m 0.022492861820157896m"
+                      data-normal="0.7485642237534899m 0.5711799374798086m 0.33675671030715526m"
+                      data-visibility-attribute="visible"
+                    >
+                      <h5 class="text-warning text-uppercase HotspotAnnotation">
+                        Botella silbato
+                      </h5>
+                      <p class="HotspotAnnotation">
+                        Tiene en la superficie exterior, pintura solamente en las patas y
+                        cuello, el resto del cuerpo es pulido. El objeto fue encontrado junto
+                        al entierro primario de un perro y asociado a otros elementos tales
+                        como una cuenta de jade
+                      </p>
+                    </div>
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+                    <div class="carousel-item">
+                      <model-viewer
+                      src="galery3d/CulturaChorrera/modelGLB/figurin.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+
+                      <div
+                      id="dos"
+                      class="Hotspot descripcion"
+                      slot="hotspot-2"
+                      data-position="0.005127580924045146m -0.004169521044680201m 0.012674893429232423m"
+                      data-normal="0.22143852224707314m -0.06855088706954293m 0.9727619219248929m"
+                      data-visibility-attribute="visible"
+                    >
+                      <h5 class="text-warning text-uppercase HotspotAnnotation">
+                        Figurin | Chorrera - Bahia
+                      </h5>
+                      <p class="HotspotAnnotation">
+                        figurin de piedra arenisca de la Cultura Chorrera -Bahia, la cara y
+                        brazos fueron tallados. La cara en general tiene rasgos faciales muy
+                        detallados
+                      </p>
+                    </div>
+
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+             
+
+
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#cchorrera" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#cchorrera" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+
+
+
+
+
+              </div>
             </div>
           </div>
 
           <!-- -------------------------------------------------- -->
-          <div class="accordion-item">
+          <div class="accordion-item border-0 ">
             <h2 class="accordion-header" id="headingsix">
               <button
                 class="accordion-button collapsed d-flex gap-2 w-100 justify-content-between"
@@ -462,10 +1185,80 @@
               aria-labelledby="headingsix"
               data-bs-parent="#accordionExample"
             >
-              <div class="accordion-body"></div>
+              <div class="accordion-body mod">
+
+
+                    
+                <div id="cmachalilla" class="carousel slide" data-bs-ride="true">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#cmachalilla" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                   
+                  </div>
+                  <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                      <model-viewer
+                      src="galery3d/CulturaMachalilla/modelGLB/cantaroMachalilla.glb"
+                      shadow-intensity="1"
+                      ar
+                      camera-controls
+                      auto-rotate
+                      touch-action="pan-y"
+                    >
+                      <!-- INICIO DE HOSTPOT -->
+                      <div
+                      class="Hotspot descripcion"
+                      slot="hotspot-1"
+                      data-position="1.0492787514150264m 1.401319566166321m 0.35167068446046446m"
+                      data-normal="-0.32643124023765824m 0.31856716670328733m 0.889919999604203m"
+                      data-visibility-attribute="visible"
+                    >
+                      <h6 class="text-warning text-uppercase HotspotAnnotation">
+                        Cantaro
+                      </h6>
+                      <p class="HotspotAnnotation">
+                        vasija restringida, cuello cónico, labio eventido, cuerpo esférico, base cóncavo-convexa, inestable. Superficie decorada con pintura roja pulida en el color natural de la pasta formando diseños geométricos.
+                
+                      </p>
+                    </div>
+                  
+                      <!-- FIN DE HOSTPOT -->
+
+                      <button slot="ar-button" id="ar-button">
+                        Ver en tu espacio
+                      </button>
+
+                      <button
+                        id="ar-failure"
+                        class="btn btn-danger border-0"
+                      >
+                        Superficie no válida!
+                      </button>
+                    </model-viewer>
+                    </div>
+
+
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#cmachalilla" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#cmachalilla" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+
+
+
+
+              </div>
             </div>
           </div>
         </div>
+       <div  class="d-grid gap-2 d-md-flex justify-content-sm-end jus mt-3 mb-5">
+         <a href="." class=" btn btn-link text-decoration-none text-white-50  ">Visitar Sitio Web</a>
+       </div>
       </div>
     </div>
 
